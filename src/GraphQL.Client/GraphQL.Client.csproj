@@ -1,19 +1,30 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
 
   <Import Project="../src.props" />
 
   <PropertyGroup>
-    <Description>A GraphQL Client</Description>
-    <TargetFrameworks>netstandard1.1;netstandard1.3;netstandard2.0</TargetFrameworks>
+    <Description>A GraphQL Client optimized for higher loads forked from https://github.com/graphql-dotnet/graphql-client.</Description>
+    <TargetFrameworks>netstandard2.0</TargetFrameworks>
+    <PackageProjectUrl>https://github.com/raphaabreu/graphql-client</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/raphaabreu/graphql-client</RepositoryUrl>
+    <PackageIconUrl></PackageIconUrl>
+    <Version>1.0.4</Version>
+    <Authors>Deinok,graphql-dotnet,raphaabreu</Authors>
+    <Product>raphaabreu/GraphQL.Client</Product>
+    <PackageLicenseUrl />
+    <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
   </PropertyGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\GraphQL.Common\GraphQL.Common.csproj" />
   </ItemGroup>
 
-  <ItemGroup Condition="'$(TargetFramework)' == 'netstandard1.1'">
-    <PackageReference Include="System.Net.Http" Version="4.3.3" />
+  <ItemGroup>
+    <None Include="..\..\LICENSE.txt">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 
   <!-- Allow method ReadAsAsync<T>

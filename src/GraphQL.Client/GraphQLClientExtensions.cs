@@ -2,14 +2,17 @@ using System.Threading.Tasks;
 using GraphQL.Common.Request;
 using GraphQL.Common.Response;
 
-namespace GraphQL.Client {
+namespace GraphQL.Client
+{
 
 	/// <summary>
 	/// Extension Methods for <see cref="GraphQLClient"/>
 	/// </summary>
-	public static class GraphQLClientExtensions {
+	public static class GraphQLClientExtensions
+	{
 
-		private static readonly GraphQLRequest IntrospectionQuery = new GraphQLRequest {
+		private static readonly GraphQLRequest IntrospectionQuery = new GraphQLRequest
+		{
 			Query = @"
 				query IntrospectionQuery {
 					__schema {
@@ -104,17 +107,21 @@ namespace GraphQL.Client {
 		/// </summary>
 		/// <param name="graphQLClient">The GraphQLClient</param>
 		/// <returns>The GraphQLResponse</returns>
-		public static async Task<GraphQLResponse> GetIntrospectionQueryAsync(this GraphQLClient graphQLClient) =>
-			await graphQLClient.GetAsync(IntrospectionQuery).ConfigureAwait(false);
+		public static async Task<GraphQLResponse> GetIntrospectionQueryAsync(this GraphQLClient graphQLClient)
+		{
+			return await graphQLClient.GetAsync(IntrospectionQuery).ConfigureAwait(false);
+		}
 
 		/// <summary>
 		/// Send an IntrospectionQuery via POST
 		/// </summary>
 		/// <param name="graphQLClient">The GraphQLClient</param>
 		/// <returns>The GraphQLResponse</returns>
-		public static async Task<GraphQLResponse> PostIntrospectionQueryAsync(this GraphQLClient graphQLClient) =>
-			await graphQLClient.PostAsync(IntrospectionQuery).ConfigureAwait(false);
+		public static async Task<GraphQLResponse> PostIntrospectionQueryAsync(this GraphQLClient graphQLClient)
+		{
+			return await graphQLClient.PostAsync(IntrospectionQuery).ConfigureAwait(false);
+		}
+
 
 	}
-
 }
